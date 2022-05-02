@@ -1,0 +1,11 @@
+<ng-template #dialogo id="dialogoMensajePrincipal">
+    <div class="borderMensajes">
+        <mat-icon class="{{getIcon(true)}} iconoMensajes">{{getIcon(false)}}</mat-icon>
+        <div class="divMensajes">
+        <!--<div *ngFor="let alert of alerts" class="{{cssClass(alert)}}">-->
+            <!--<a class="close" (click)="removeAlert(alert)">&times;</a>-->
+            <!--<span [innerHTML]="alert.message"></span>-->
+            <span *ngFor="let alert of alerts" class="{{alert.esTitulo ? 'titulo': 'subtexto'}}">{{alert.message}}</span>
+        </div>
+    </div>
+</ng-template>

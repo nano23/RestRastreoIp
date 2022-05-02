@@ -1,0 +1,29 @@
+.card-field {
+    border: 1px solid #BFBFBF;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+
+    &-shadow {
+        @extend .card-field;
+        margin: 0rem 1rem;
+        box-shadow: -3px 3px 6px 0px #00000040 !important;
+    }
+
+    &-inner {
+        @extend .card-field;
+        border-radius: 10px !important;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    mat-card-title {
+        font-size: 1rem !important;
+        font-weight: bold !important;
+        transform: translateY(-1.5rem);
+        background-color: white;
+        width: fit-content;
+        padding: 0rem 0.5rem;
+        margin-bottom: -1rem !important;
+        color: #7F7F7F !important;
+    }
+}

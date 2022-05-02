@@ -1,0 +1,238 @@
+<div class="divTitulo">
+  <span class="tit tit1">{{ 'titulo' | translate }}</span>
+</div>
+<div class="divTraceo">
+  <div fxLayout="row wrap" class="matero-row">
+    <div fxFlex="100" class="matero-col">
+      <app-mensaje-principal></app-mensaje-principal>
+      <mat-card class="card-field-inner innerDiv">
+        <mat-card-title class="innerDivTitle">{{ 'formp' | translate }}</mat-card-title>
+        <div class="innerDivInt">
+
+          <mat-card class="card-field-inner mt2">
+            <mat-card-title>{{ 'inputip' | translate }}</mat-card-title>
+            <div name="searchForm" class="form-field-full">
+
+              <div fxLayout="row wrap" fxLayoutGap="8px grid" class="pad1">
+
+                <div fxFlex="100" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline">
+                    <mat-label>
+                      {{ 'ip' | translate }}
+                    </mat-label>
+                    <input type="text" placeholder="{{ 'ip' | translate }}" matInput
+                      [formControl]="controlDocumento" required>
+                    <span matSuffix class="ayudas" (click)="tooltipDocumento.toggle()">
+                      <mat-icon #tooltipDocumento="matTooltip" matTooltip="{{
+                    'iptool' | translate
+                  }}" [matTooltipPosition]="'above'">
+                        help
+                      </mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+
+
+
+
+          <div  fxLayoutGap="8px grid" class="pad1 innerButton">
+            <div fxFlex="49" fxFlex.lt-sm="100" class="w49">
+              <button mat-raised-button type="button" color="primary" class="m-t-8" (click)="consultar()" [disabled]="consultarDisabled()">
+                {{'consultar' | translate}}
+              </button>
+            </div>
+            <div class="w2"></div>
+            <div fxFlex="49" fxFlex.lt-sm="100" class="w49">
+              <button mat-raised-button type="button" color="primary" class="m-t-8 ml1" (click)="limpiar()">
+                {{'limpiar' | translate}}
+              </button>
+            </div>
+          </div>
+
+          <div class="form-field-full">
+            <mat-card class="card-field-inner">
+              <mat-card-title>{{'resultadoOperacion' | translate }}</mat-card-title>
+          
+              <div fxLayout="row wrap" fxLayoutGap="8px grid" class="pad1">
+          
+          
+                <div fxFlex="25" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controlIp' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controlIp">
+                    <span matSuffix class="ayudas" (click)="tooltipcontrolIp.toggle()">
+                      <mat-icon #tooltipcontrolIp="matTooltip"
+                        matTooltip="{{'controlIpTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+          
+                <div fxFlex="25" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controlfechaActual' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controlfechaActual">
+                    <span matSuffix class="ayudas" (click)="tooltipcontrolfechaActual.toggle()">
+                      <mat-icon #tooltipcontrolfechaActual="matTooltip"
+                        matTooltip="{{'controlfechaActualTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+        
+                <div fxFlex="25" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controlpais' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controlpais">
+                    <span matSuffix class="procesaPorcentajeSpan"></span>
+                    <span matSuffix class="ayudas" (click)="tooltipcontrolpais.toggle()">
+                      <mat-icon #tooltipcontrolpais="matTooltip"
+                        matTooltip="{{'controlpaisTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+
+                <div fxFlex="25" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controlisoCode' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controlisoCode">
+                    <span matSuffix class="procesaPorcentajeSpan"></span>
+                    <span matSuffix class="ayudas" (click)="tooltipcontrolisoCode.toggle()">
+                      <mat-icon #tooltipcontrolisoCode="matTooltip"
+                        matTooltip="{{'presupuesto.movimientosMasivos.controlisoCodeTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+          
+          
+                <div fxFlex="25" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controlidiomas' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controlidiomas">
+                    <span matSuffix class="ayudas" (click)="tooltipcontrolidiomas.toggle()">
+                      <mat-icon #tooltipcontrolidiomas="matTooltip"
+                        matTooltip="{{'controlidiomasTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+          
+                <div fxFlex="25" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controlhora' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controlhora">
+                    <span matSuffix class="ayudas" (click)="tooltipcontrolhora.toggle()">
+                      <mat-icon #tooltipcontrolhora="matTooltip"
+                        matTooltip="{{'controlhoraTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+        
+                <div fxFlex="25" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controldistanciaEstimada' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controldistanciaEstimada">
+                    <span matSuffix class="procesaPorcentajeSpan"></span>
+                    <span matSuffix class="ayudas" (click)="tooltipcontroldistanciaEstimada.toggle()">
+                      <mat-icon #tooltipcontroldistanciaEstimada="matTooltip"
+                        matTooltip="{{'controldistanciaEstimadaTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+
+                <div fxFlex="25" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controlmoneda' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controlmoneda">
+                    <span matSuffix class="procesaPorcentajeSpan"></span>
+                    <span matSuffix class="ayudas" (click)="tooltipcontrolmoneda.toggle()">
+                      <mat-icon #tooltipcontrolmoneda="matTooltip"
+                        matTooltip="{{'controlmonedaTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+
+        
+          
+              </div>
+            </mat-card>
+          </div>
+
+
+          <div class="form-field-full">
+            <mat-card class="card-field-inner">
+              <mat-card-title>{{'cantidadesCalculadas' | translate }}</mat-card-title>
+          
+              <div fxLayout="row wrap" fxLayoutGap="8px grid" class="pad1">
+          
+          
+                <div fxFlex="33" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controlLejana' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controlLejana">
+                    <span matSuffix class="ayudas" (click)="tooltipcontrolLejana.toggle()">
+                      <mat-icon #tooltipcontrolLejana="matTooltip"
+                        matTooltip="{{'controlLejanaTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+          
+                <div fxFlex="33" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controlCercana' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controlCercana">
+                    <span matSuffix class="ayudas" (click)="tooltipcontrolCercana.toggle()">
+                      <mat-icon #tooltipcontrolCercana="matTooltip"
+                        matTooltip="{{'controlCercanaTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+        
+                <div fxFlex="33" fxFlex.lt-sm="100">
+                  <mat-form-field appearance="outline" class="">
+                    <mat-label>{{'controlPromedio' | translate}}</mat-label>
+                    <input type="text" placeholder="{{'generales.comunes.seleccione' | translate}}" matInput
+                    [formControl]="controlPromedio">
+                    <span matSuffix class="procesaPorcentajeSpan"></span>
+                    <span matSuffix class="ayudas" (click)="tooltipcontrolPromedio.toggle()">
+                      <mat-icon #tooltipcontrolPromedio="matTooltip"
+                        matTooltip="{{'controlPromedioTool' | translate}}"
+                        [matTooltipPosition]="'above'">help</mat-icon>
+                    </span>
+                  </mat-form-field>
+                </div>
+          
+          
+
+        
+          
+              </div>
+            </mat-card>
+          </div>
+
+
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

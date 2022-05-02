@@ -1,0 +1,11 @@
+FROM node:12.20
+
+WORKDIR /usr/src/app/RastreoIpFront
+
+COPY package*.json ./
+
+RUN npm install -g @angular/cli @angular-devkit/build-angular && npm install
+
+EXPOSE 4201
+
+CMD ["ng", "serve", "--port", "4201", "--host", "0.0.0.0"]

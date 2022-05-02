@@ -1,0 +1,104 @@
+/*https://stackblitz.com/edit/angular-material-table-responsive?file=app%2Fapp.component.css*/
+
+@media screen and (max-width: 769px) {
+
+  .mat-cell, .mat-footer-cell {
+    font-size: small!important;
+}
+
+      mat-table, td {
+        width: 100%;
+    }
+
+    .mtx-grid .mtx-grid-layout {
+      display: initial!important;
+      flex: none!important;
+      overflow: hidden!important;
+  }
+
+  .mtx-grid .mat-table:not(.mat-column-resize-table) {
+    display: grid!important;
+}
+
+    .mat-table {
+      border: 0;
+      vertical-align: middle
+    }
+  
+    .mat-table caption {
+      font-size: 1em;
+    }
+    
+    /*  Enable this to hide header
+    .mat-table .mat-header-cell {
+      
+      border: 10px solid;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    */
+    .mat-table .mat-row {
+      border-bottom: 5px solid #ddd;
+      display: contents;
+    }
+    /*
+    .mat-table .mat-row:nth-child(even) {background: #CCC}
+    .mat-table .mat-row:nth-child(odd) {background: #FFF}
+    .mat-table .mat-cell:not(:last-child) 
+    */
+    .mat-table .mat-cell  {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 1em;
+      text-align: right;
+      height:30px;
+      padding: 1rem!important;
+      padding-bottom: 1.5rem!important;
+    }
+    .mat-table .mat-cell mtx-grid-cell .dataLabel:before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-size: larger;
+      font-weight: bold;
+    }
+
+    .mat-table .mat-header-cell:last-child{
+      display: none;
+    }
+
+    .mat-table thead{
+      background-color: #339900!important;
+      height: 2rem;
+    }
+
+    .mat-table thead th{
+      display: none!important;
+    }
+
+    .mat-table .mat-cell:last-child {
+      border: none!important;
+      border-bottom: 1px solid #ddd!important;
+      width: 100%!important;
+      min-width: 100%!important;
+      height: 70px!important;
+      text-align: center;
+    }
+    /*
+      .mat-table .mat-cell:first-child {
+      margin-top: 4%;
+    }*/
+
+    .mtx-grid .mat-row:last-of-type .mat-cell{
+      border-bottom-width: thin!important;
+    }
+
+  }

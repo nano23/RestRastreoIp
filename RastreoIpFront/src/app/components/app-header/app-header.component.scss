@@ -1,0 +1,36 @@
+.divHeader{
+  text-align: center;
+  display: block;
+  padding: 0.5rem;
+}
+
+
+.imgHeader{
+  width: 8rem;
+}
+
+.imgIp{
+  width: 10rem;
+  float: left;
+  padding-left: 15rem;
+}
+
+.spanHeader{
+  line-height: 5rem;
+    margin-left: 2rem;
+    font-size: -webkit-xxx-large;
+    color: rgb(36,46,142);
+}
+
+
+@media (max-width: 986px) {
+  .imgIp{
+    padding-left: 2rem;
+  }
+
+  .spanHeader{
+    font-size: x-large;
+  }
+
+
+}
