@@ -93,11 +93,11 @@
 		
 			- docker compose up
 			
-		4. si la aplicacion java no sube, ejemplo en windows docker esta presentando un problema con la dependencia (redis.clients.jedis), ubicación en /RestRastreoIp ejecutar el comando
+		4.	cargar la url de sonar localhost9000 y actualizar default user/pass cuando se ejecute el comando anterior: admin/admin el nuevo password admin23
+			
+		5. si la aplicacion java no sube, ejemplo en windows docker esta presentando un problema con la dependencia (redis.clients.jedis), ubicación en /RestRastreoIp ejecutar el comando
 		
 			- mvn spring-boot:run
-			
-		5.	actualizar sonar default user/pass cuando se ejecute el comando anterior: admin/admin el nuevo password admin23
 
 		6.	Url reporte estado del servicio actuator, acceder a:
 		
@@ -129,5 +129,17 @@
 			sysctl -w vm.max_map_count=262144
 		
 		https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-cli-run-prod-mode
+		
+#### imagenes de ejemplo: 		
+
+- visualizacion del front:
+
+
+	![front ejemplo](https://user-images.githubusercontent.com/36667340/166292136-c0d2f322-cf0c-4fd3-9c7a-4167a46f4c35.PNG)
+	
+- visualizacion resumen reporte sonar:	
+
+	
+	![sonarqube](https://user-images.githubusercontent.com/36667340/166293171-1309a446-18a3-4f4c-a464-3e6c26c72dcd.PNG)
 
 
