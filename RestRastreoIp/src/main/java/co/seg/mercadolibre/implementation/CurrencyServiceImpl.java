@@ -24,6 +24,9 @@ public class CurrencyServiceImpl implements CurrencyService  {
 	
 	@Value("${external.services.taxes.url}")
 	String taxesServiceUri;
+	
+	@Value("${external.services.taxes.keyName}")
+	String keyName;
 
 	/**
 	 * consultar servicio de monedas
@@ -37,8 +40,7 @@ public class CurrencyServiceImpl implements CurrencyService  {
 		return webClient.get()
 				.uri(uriBuilder -> uriBuilder
 					    .path(ECurrencyPath.LATEST.getPath())
-					    .queryParam("access_key", taxesServiceApiKey)
-					    .build())
+					    .build()).header(keyName, taxesServiceApiKey)
 					  .retrieve()
 		        .bodyToMono(CurrencyServiceResponse.class).block();
 	}

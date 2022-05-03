@@ -16,8 +16,9 @@ spring:
 external:
   services:
     taxes:
-      url: http://data.fixer.io
-      apikey: 932f508db423f64299e60a912a6653a3
+      url: http://api.apilayer.com
+      apikey: 39pvbCgbJ53LUlqWNLLUgPdHh4iy41FI
+      keyName: apikey
     ipCountry:
       url: http://api.ipapi.com/
       apikey: 92a132b7deac904f941338d041145e4c

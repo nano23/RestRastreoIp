@@ -7,7 +7,7 @@ package co.seg.mercadolibre.resources;
  */
 public enum ECurrencyPath {
 	
-	LATEST("/latest");
+	LATEST("/fixer/latest");
 
 	private String path;
 
